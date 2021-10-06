@@ -1,8 +1,8 @@
 from classes.Cadastro import Cadastro
-import database.database as DB
+import database.database as db
 
-def getCadastro():
-    conn = DB.connect_db()
+def gettCadastro():
+    conn = db.connect_db()
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM cadastro;")
     lista_cadastro  =[]
@@ -20,7 +20,7 @@ def getCadastro():
     return lista_cadastro
 
 def getCadastro(id):
-    conn = DB.connect_db()
+    conn = db.connect_db()
     cursor = conn.cursor()
     sql = """SELECT * FROM cadastro WHERE id = :"""
     cursor.execute(sql, [id])
@@ -37,7 +37,7 @@ def getCadastro(id):
     return novoCadastro    
 
 def addCadastro(cadastro):
-    conn = DB.connect_db()
+    conn = db.connect_db()
     cursor = conn.cursor()
     sql = """INSERT INTO cadastro (nome, cpf, cartao_sus, telefone, endereco)
                       VALUES (?, ?, ?, ?, ?)"""
@@ -46,7 +46,7 @@ def addCadastro(cadastro):
     conn.close()
 
 def editCadastro(cadastro):
-    conn = DB.connect_db()
+    conn = db.connect_db()
     cursor = conn.cursor()
     sql = """UPDATE cadastro SET nome=?, cpf=?, cartao_sus=?, telefone=?, endereco=? WHERE id=?"""
     cursor.execute(sql[cadastro.nome, cadastro.cpf, cadastro.cartao_sus, cadastro.telefone, cadastro.endreco, cadastro.id])
@@ -54,7 +54,7 @@ def editCadastro(cadastro):
     conn.close()
 
 def delCadastro(id):
-    conn = DB.connect_db()
+    conn = db.connect_db()
     cursor = conn.cursor()
     sql = """DELETE FROM cadastro WHERE id = ?"""
     cursor.execute(sql, [id]) 

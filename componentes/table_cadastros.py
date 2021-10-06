@@ -26,7 +26,7 @@ class QuadroCadastro(QTableWidget):
         self.clicked.connect(self.on_click) 
 
     def carregaDados(self):
-        self.lista_cadastro = CadModel.getCadastro()
+        self.lista_cadastro = CadModel.gettCadastro()
         self.setRowCount(0)
         for cadastro in self.lista_cadastro:
             self.addRow(cadastro)

@@ -1,11 +1,10 @@
-import sys, os
-from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel, QHBoxLayout, QWidget, QListWidgetItem
-from PyQt5 import uic
-
+import sys
+from PyQt5.QtWidgets import QApplication
 from layouts.mainwindow import MainWindow
+from qt_material import apply_stylesheet
 
 app = QApplication(sys.argv)
-
+apply_stylesheet(app, theme='dark_red.xml')
 window = MainWindow()
 window.show()
 

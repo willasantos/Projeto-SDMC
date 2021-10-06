@@ -8,22 +8,17 @@ class MainWindow(QMainWindow):
         uic.loadUi("ui/mainwindow.ui", self)
 
         self.listWidget.setCurrentRow(0)
-        self.mostrarJanelas()
         self.listWidget.currentRowChanged.connect(self.display)
-        self.setEventos()
-       
-
-    def setEventos(self):
         self.btn_entrar.clicked.connect(self.Iniciar)
 
     def Iniciar(self):
         self.stackedWidget.setCurrentIndex(1)
         self.statusbar.showMessage("Usuário: recepcionista")
 
-    def mostrarJanelas(self):
-        self.stackedWidget.insertWidget(0, CadCadastro())
+    """def mostrarJanelas(self):
+        self.stackedWidget.insertWidget(2, CadCadastro())"""
 
     def display(self, index):
-        self.mostrarJanelas()
+        #self.mostrarJanelas()
         self.stackedWidget.setCurrentIndex(index) 
         self.listWidget.setCurrentRow(index)   
