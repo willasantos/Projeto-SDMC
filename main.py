@@ -4,7 +4,7 @@ from layouts.mainwindow import MainWindow
 from qt_material import apply_stylesheet
 
 app = QApplication(sys.argv)
-apply_stylesheet(app, theme='dark_red.xml')
+apply_stylesheet(app, theme='dark_purple.xml')
 window = MainWindow()
 window.show()
 

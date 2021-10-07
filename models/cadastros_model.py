@@ -13,7 +13,9 @@ def gettCadastro():
         cartao_sus = c[3]
         telefone = c[4]
         endereco = c[5]
-        novoCadastro = Cadastro(id, nome, cpf, cartao_sus, telefone, endereco)
+        data = c[6]
+        data_nascimento = c[7]
+        novoCadastro = Cadastro(id, nome, cpf, cartao_sus, telefone, endereco, data, data_nascimento)
         lista_cadastro.append(novoCadastro)
 
     conn.close()
@@ -32,24 +34,26 @@ def getCadastro(id):
     cartao_sus = ponto[3]
     telefone = ponto[4]
     endereco = ponto[5]
-    novoCadastro = Cadastro(id, nome, cpf, cartao_sus, telefone, endereco)
+    data = ponto[6]
+    data_nascimento = ponto[7]
+    novoCadastro = Cadastro(id, nome, cpf, cartao_sus, telefone, endereco, data, data_nascimento)
     conn.close()
     return novoCadastro    
 
 def addCadastro(cadastro):
     conn = db.connect_db()
     cursor = conn.cursor()
-    sql = """INSERT INTO cadastro (nome, cpf, cartao_sus, telefone, endereco)
-                      VALUES (?, ?, ?, ?, ?)"""
-    cursor.execute(sql, [cadastro.nome, cadastro.cpf, cadastro.cartao_sus, cadastro.telefone, cadastro.endereco])
+    sql = """INSERT INTO cadastro (nome, cpf, cartao_sus, telefone, endereco, data, data_nascimento)
+                      VALUES (?, ?, ?, ?, ?, ?, ?)"""
+    cursor.execute(sql, [cadastro.nome, cadastro.cpf, cadastro.cartao_sus, cadastro.telefone, cadastro.endereco, cadastro.data, cadastro.data_nascimento])
     conn.commit()
     conn.close()
 
 def editCadastro(cadastro):
     conn = db.connect_db()
     cursor = conn.cursor()
-    sql = """UPDATE cadastro SET nome=?, cpf=?, cartao_sus=?, telefone=?, endereco=? WHERE id=?"""
-    cursor.execute(sql[cadastro.nome, cadastro.cpf, cadastro.cartao_sus, cadastro.telefone, cadastro.endreco, cadastro.id])
+    sql = """UPDATE cadastro SET nome=?, cpf=?, cartao_sus=?, telefone=?, endereco=?, data=?, data_nascimento=? WHERE id=?"""
+    cursor.execute(sql[cadastro.nome, cadastro.cpf, cadastro.cartao_sus, cadastro.telefone, cadastro.endereco,cadastro.data,cadastro.data_nascimento, cadastro.id])
     conn.commit()
     conn.close()
 

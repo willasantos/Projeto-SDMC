@@ -7,7 +7,7 @@ class QuadroCadastro(QTableWidget):
         super().__init__(0, 6)
         self.janela_prince = janela_prince
 
-        headers = ["ID", "NOME", "CPF", "CARTAO_SUS", "TELEFONE", "ENDERECO"]
+        headers = ["ID", "NOME", "CPF", "CARTAO_SUS", "TELEFONE", "ENDERECO", "DATA", "DATA_NASCIMENTO"]
         self.setHorizontalHeaderLabels(headers)   
 
         self.configuracao()
@@ -40,6 +40,7 @@ class QuadroCadastro(QTableWidget):
         cartao_sus = QTableWidgetItem(cadastro.cartao_sus)
         telefone = QTableWidgetItem(cadastro.telefone)
         endereco = QTableWidgetItem(cadastro.endereco)
+        
     
         self.setItem(rowCount, 0, id)
         self.setItem(rowCount, 1, nome)

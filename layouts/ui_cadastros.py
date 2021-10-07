@@ -1,5 +1,6 @@
 from PyQt5.QtWidgets import QWidget
 from PyQt5 import uic
+from PyQt5.QtCore import QRegExp, QDate
 
 from classes.Cadastro import Cadastro
 from componentes.table_cadastros import QuadroCadastro
@@ -13,6 +14,9 @@ class CadCadastro(QWidget):
         self.verticalLayout.addWidget(self.table)
         self.cadastroAtual = None
         self.setEventos()
+        self.dateEdit.setDate(QDate.currentDate())
+        self.dateEdit_2.setDate(QDate.currentDate())
+
 
     def setEventos(self):
         self.salvar.clicked.connect(self.salveCadastro)
@@ -61,7 +65,7 @@ class CadCadastro(QWidget):
         self.telefone.setText(cadastro.telefone)
         self.endereco.setText(cadastro.endereco)
 
-        self.salavar.setText("Atualizar")
+        self.salvar.setText("Atualizar")
         self.excluir.setenabled(True)
 
     def excluirCadastro(self):
