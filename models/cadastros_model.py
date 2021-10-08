@@ -15,7 +15,8 @@ def gettCadastro():
         endereco = c[5]
         data = c[6]
         data_nascimento = c[7]
-        novoCadastro = Cadastro(id, nome, cpf, cartao_sus, telefone, endereco, data, data_nascimento)
+        especialidade = c[8]
+        novoCadastro = Cadastro(id, nome, cpf, cartao_sus, telefone, endereco, data, data_nascimento, especialidade)
         lista_cadastro.append(novoCadastro)
 
     conn.close()
@@ -39,6 +40,27 @@ def getCadastro(id):
     novoCadastro = Cadastro(id, nome, cpf, cartao_sus, telefone, endereco, data, data_nascimento)
     conn.close()
     return novoCadastro    
+
+def getPesquisa(especialidade=""):
+    conn = db.connect_db()
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM cadastro WHERE especialidade= : ")
+    lista_cadastro = []
+
+    for e in cursor.fetchall():
+        id = e[0]
+        nome = e[1]
+        cpf = e[2]
+        cartao_sus = e[3]
+        telefone = e[4]
+        endereco = e[5]
+        data = e[6]
+        data_nascimento = e[7]
+        novoCadastro = Cadastro(id, nome, cpf, cartao_sus, telefone, endereco, data, data_nascimento, especialidade)
+        lista_cadastro.append(novoCadastro)
+
+    conn.close()
+    return lista_cadastro        
 
 def addCadastro(cadastro):
     conn = db.connect_db()

@@ -4,6 +4,7 @@ from PyQt5.QtCore import QRegExp, QDate
 
 from classes.Cadastro import Cadastro
 from componentes.table_cadastros import QuadroCadastro
+import models.cadastros_model as CadModel
 
 class CadCadastro(QWidget):
     def __init__(self):
@@ -17,11 +18,14 @@ class CadCadastro(QWidget):
         self.dateEdit.setDate(QDate.currentDate())
         self.dateEdit_2.setDate(QDate.currentDate())
 
-
     def setEventos(self):
-        self.salvar.clicked.connect(self.salveCadastro)
-        self.limpar.clicked.connect(self.limparCampos)
-        self.excluir.clicked.connect(self.excluirCadastro)
+        self.bt_salvar.clicked.connect(self.salveCadastro)
+        self.bt_limpar.clicked.connect(self.limparCampos)
+        self.bt_excluir.clicked.connect(self.excluirCadastro)
+        #self.combo_medico.textEdited.connect(self.text_edited)
+
+    def text_edited(self, c):
+        self.table.carregaDados(c)    
 
     def salveCadastro(self):
         novo = self.gettCadastro()  
@@ -71,3 +75,11 @@ class CadCadastro(QWidget):
     def excluirCadastro(self):
         self.table.deletar(self.cadastroAtual)
         self.limparCampos()               
+
+    def finalizaCadastro(self):
+        data = self.dateEdit.dateTime().toString('dd/MM/yyyy')
+        data_nascimento = self.dateEdit_2.dateTime().toString('dd/MM/yyyy')
+        novoCadastro = (-1, data_nascimento, data)
+        CadModel.addCadastro(novoCadastro)   
+
+        self.limparCampos()            

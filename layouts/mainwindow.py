@@ -35,7 +35,7 @@ class MainWindow(QMainWindow):
         self.listWidget.setItemWidget(item, item_widget) 
 
         self.listWidget.setCurrentRow(0)
-       # self.mostrarJanelas()
+        self.mostrarJanelas()
         self.listWidget.currentRowChanged.connect(self.display)
         self.btn_entrar.clicked.connect(self.Iniciar)
 
@@ -46,7 +46,6 @@ class MainWindow(QMainWindow):
     def mostrarJanelas(self):
         self.stackedWidget.insertWidget(0, CadCadastro())
         self.stackedWidget.insertWidget(1, HistoricoConsulta())
-
 
     def display(self, index):
         self.mostrarJanelas()

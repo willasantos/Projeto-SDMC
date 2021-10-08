@@ -8,13 +8,13 @@ import models.cadastros_model as CadModel
 TYPE = {'remove': 0}
 
 class HistoricoConsulta(QWidget):
-    def __init__(self, cadastro):
+    def __init__(self ):
          super().__init__()
          uic.loadUi("ui/historico.ui", self)
 
-         self.cadastro = cadastro
+         #self.cadastro = cadastro
          self.configTable()
-         self.inserirDados()
+         #self.inserirDados()
          
     def inserirDados(self):
         lista_consultas = CadModel.getCadastro(self.cadastro.id)
