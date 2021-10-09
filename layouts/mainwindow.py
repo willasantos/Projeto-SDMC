@@ -45,7 +45,7 @@ class MainWindow(QMainWindow):
 
     def mostrarJanelas(self):
         self.stackedWidget.insertWidget(0, CadCadastro())
-        self.stackedWidget.insertWidget(1, HistoricoConsulta())
+        self.stackedWidget.insertWidget(1, HistoricoConsulta(self))
 
     def display(self, index):
         self.mostrarJanelas()

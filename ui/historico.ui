@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>829</width>
+    <width>949</width>
     <height>541</height>
    </rect>
   </property>
@@ -16,8 +16,8 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>120</y>
+     <x>20</x>
+     <y>240</y>
      <width>221</width>
      <height>131</height>
     </rect>
@@ -37,9 +37,9 @@
    <property name="geometry">
     <rect>
      <x>250</x>
-     <y>70</y>
-     <width>541</width>
-     <height>431</height>
+     <y>40</y>
+     <width>681</width>
+     <height>461</height>
     </rect>
    </property>
    <property name="title">
@@ -50,8 +50,8 @@
      <rect>
       <x>20</x>
       <y>30</y>
-      <width>501</width>
-      <height>371</height>
+      <width>641</width>
+      <height>411</height>
      </rect>
     </property>
     <column>
@@ -67,6 +67,16 @@
     <column>
      <property name="text">
       <string>CPF</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Data da Consulta</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Especialidade</string>
      </property>
     </column>
    </widget>

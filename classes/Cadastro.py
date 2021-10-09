@@ -1,5 +1,6 @@
 class Cadastro:
-    def __init__(self, nome, cpf, cartao_sus, telefone, endereco, data, data_nascimento, especialidade):
+    def __init__(self, id,nome, cpf, cartao_sus, telefone, endereco, data, data_nascimento, especialidade):
+        self.id = id
         self.nome = nome
         self.cpf = cpf
         self.cartao_sus = cartao_sus

@@ -1,6 +1,6 @@
 from PyQt5.QtWidgets import QWidget
 from PyQt5 import uic
-from PyQt5.QtCore import QRegExp, QDate
+from PyQt5.QtCore import  QDate
 
 from classes.Cadastro import Cadastro
 from componentes.table_cadastros import QuadroCadastro
@@ -21,11 +21,11 @@ class CadCadastro(QWidget):
     def setEventos(self):
         self.bt_salvar.clicked.connect(self.salveCadastro)
         self.bt_limpar.clicked.connect(self.limparCampos)
-        self.bt_excluir.clicked.connect(self.excluirCadastro)
-        #self.combo_medico.textEdited.connect(self.text_edited)
+        self.bt_excluir.clicked.connect(self.excluirCadastro)  
+        self.combo_medico.currentIndexChanged(self.text_edited)
 
     def text_edited(self, c):
-        self.table.carregaDados(c)    
+        self.table.carregaDados(c)        
 
     def salveCadastro(self):
         novo = self.gettCadastro()  
@@ -43,10 +43,13 @@ class CadCadastro(QWidget):
         cpf = self.cpf.text()
         cartao_sus = self.cartao_sus.text()
         telefone = self.telefone.text()
-        endereco = self.endereco.text()                
+        endereco = self.endereco.text()     
+        data = self.data.text()
+        data_nascimento = self.data_nascimento.text()
+        especialidade = self.especialidade.text()           
 
-        if((nome != "")and (cpf != "") and (cartao_sus != "")and (telefone != "") and (endereco != "")):
-            return Cadastro(-1, nome, cpf, cartao_sus, telefone, endereco)
+        if((nome != "")and (cpf != "") and (cartao_sus != "")and (telefone != "") and (endereco != "") and (data != "") and (data_nascimento != "") and (especialidade != "")):
+            return Cadastro(-1, nome, cpf, cartao_sus, telefone, endereco, data, data_nascimento, especialidade)
         return None
 
     def limparCampos(self):
@@ -56,6 +59,7 @@ class CadCadastro(QWidget):
         self.cartao_sus.setText("")
         self.telefone.setText("")
         self.endereco.setText("")
+        self.especialidade.setText("")
 
         self.salvar.setText("Salvar")
         self.excluir.setEnabled(False)
@@ -68,6 +72,9 @@ class CadCadastro(QWidget):
         self.cartao_sus.setText(cadastro.cartao_sus)
         self.telefone.setText(cadastro.telefone)
         self.endereco.setText(cadastro.endereco)
+        self.data.setText(cadastro.data)
+        self.data_nascimento.setText(cadastro.data_nascimento)
+        self.especialidade.setText(cadastro.especialidade)
 
         self.salvar.setText("Atualizar")
         self.excluir.setenabled(True)

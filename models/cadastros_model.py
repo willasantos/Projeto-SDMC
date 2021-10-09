@@ -18,7 +18,6 @@ def gettCadastro():
         especialidade = c[8]
         novoCadastro = Cadastro(id, nome, cpf, cartao_sus, telefone, endereco, data, data_nascimento, especialidade)
         lista_cadastro.append(novoCadastro)
-
     conn.close()
     return lista_cadastro
 
@@ -37,14 +36,15 @@ def getCadastro(id):
     endereco = ponto[5]
     data = ponto[6]
     data_nascimento = ponto[7]
-    novoCadastro = Cadastro(id, nome, cpf, cartao_sus, telefone, endereco, data, data_nascimento)
+    especialidade = ponto[8]
+    novoCadastro = Cadastro(id, nome, cpf, cartao_sus, telefone, endereco, data, data_nascimento, especialidade)
     conn.close()
     return novoCadastro    
 
-def getPesquisa(especialidade=""):
+"""def getPesquisa(especialidade):
     conn = db.connect_db()
     cursor = conn.cursor()
-    cursor.execute("SELECT * FROM cadastro WHERE especialidade= : ")
+    cursor.execute("SELECT * FROM cadastro  c WHERE c.especialidade; "[especialidade])
     lista_cadastro = []
 
     for e in cursor.fetchall():
@@ -56,26 +56,27 @@ def getPesquisa(especialidade=""):
         endereco = e[5]
         data = e[6]
         data_nascimento = e[7]
+        especialidade = e[8]
         novoCadastro = Cadastro(id, nome, cpf, cartao_sus, telefone, endereco, data, data_nascimento, especialidade)
         lista_cadastro.append(novoCadastro)
 
     conn.close()
-    return lista_cadastro        
+    return lista_cadastro        """
 
 def addCadastro(cadastro):
     conn = db.connect_db()
     cursor = conn.cursor()
-    sql = """INSERT INTO cadastro (nome, cpf, cartao_sus, telefone, endereco, data, data_nascimento)
+    sql = """INSERT INTO cadastro (nome, cpf, cartao_sus, telefone, endereco, data, data_nascimento, especialidade)
                       VALUES (?, ?, ?, ?, ?, ?, ?)"""
-    cursor.execute(sql, [cadastro.nome, cadastro.cpf, cadastro.cartao_sus, cadastro.telefone, cadastro.endereco, cadastro.data, cadastro.data_nascimento])
+    cursor.execute(sql, [cadastro.nome, cadastro.cpf, cadastro.cartao_sus, cadastro.telefone, cadastro.endereco, cadastro.data, cadastro.data_nascimento, cadastro.especialidade])
     conn.commit()
     conn.close()
 
 def editCadastro(cadastro):
     conn = db.connect_db()
     cursor = conn.cursor()
-    sql = """UPDATE cadastro SET nome=?, cpf=?, cartao_sus=?, telefone=?, endereco=?, data=?, data_nascimento=? WHERE id=?"""
-    cursor.execute(sql[cadastro.nome, cadastro.cpf, cadastro.cartao_sus, cadastro.telefone, cadastro.endereco,cadastro.data,cadastro.data_nascimento, cadastro.id])
+    sql = """UPDATE cadastro SET nome=?, cpf=?, cartao_sus=?, telefone=?, endereco=?, data=?, data_nascimento=?, especialidade=? WHERE id=?"""
+    cursor.execute(sql[cadastro.nome, cadastro.cpf, cadastro.cartao_sus, cadastro.telefone, cadastro.endereco,cadastro.data,cadastro.data_nascimento,cadastro.especialidade, cadastro.id])
     conn.commit()
     conn.close()
 

@@ -1,5 +1,5 @@
-from PyQt5.QtWidgets import QWidget, QHeaderView, QTableWidget, QTableWidgetItem, QWidget, QHBoxLayout, QPushButton
-from PyQt5.QtCore import Qt, QSize, QRect
+from PyQt5.QtWidgets import QWidget, QHeaderView, QTableWidget, QTableWidgetItem, QHBoxLayout, QPushButton
+from PyQt5.QtCore import Qt, QSize
 from PyQt5.QtGui import QIcon
 from PyQt5 import uic
 
@@ -8,18 +8,18 @@ import models.cadastros_model as CadModel
 TYPE = {'remove': 0}
 
 class HistoricoConsulta(QWidget):
-    def __init__(self ):
+    def __init__(self, cadastro ):
          super().__init__()
          uic.loadUi("ui/historico.ui", self)
 
-         #self.cadastro = cadastro
+         self.cadastro = cadastro
          self.configTable()
          #self.inserirDados()
          
     def inserirDados(self):
-        lista_consultas = CadModel.getCadastro(self.cadastro.id)
+        lista_cadastro = CadModel.getCadastro(self.cadastro.id)
 
-        for c in lista_consultas:
+        for c in lista_cadastro:
             rowCount = self.tableWidget.rowCount()
             self.tableWidget.insertRow(rowCount)
 
@@ -29,10 +29,16 @@ class HistoricoConsulta(QWidget):
             nome.setTextAlignment(Qt.AlignCenter) 
             cpf = QTableWidgetItem(str(c.cpf))
             cpf.setTextAlignment(Qt.AlignCenter)
+            data = QTableWidgetItem(str(c.data))
+            data.setTextAlignment(Qt.AlignCenter)
+            especialidade = QTableWidgetItem(str(c.especialidade))
+            especialidade.setTextAlignment(Qt.AlignCenter)
 
             self.tableWidget.setItem(rowCount, 0, id)
             self.tableWidget.setItem(rowCount, 1, nome)
             self.tableWidget.setItem(rowCount, 2, cpf)
+            self.tableWidget.setItem(rowCount, 3, data)
+            self.tableWidget.setItem(rowCount, 4, especialidade)
 
     def configTable(self):
         self.tableWidget.verticalHeader().setVisible(False)

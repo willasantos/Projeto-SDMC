@@ -7,7 +7,7 @@ class QuadroCadastro(QTableWidget):
         super().__init__(0, 6)
         self.janela_prince = janela_prince
 
-        headers = ["ID", "NOME", "CPF", "CARTAO_SUS", "TELEFONE", "ENDERECO", "DATA", "DATA_NASCIMENTO"]
+        headers = ["ID", "NOME", "CPF", "CARTAO_SUS", "TELEFONE", "ENDERECO", "DATA", "DATA_NASCIMENTO", "ESPECIALIDADE"]
         self.setHorizontalHeaderLabels(headers)   
 
         self.configuracao()
@@ -36,18 +36,23 @@ class QuadroCadastro(QTableWidget):
         self.insertRow(rowCount)
         id = QTableWidgetItem(str(cadastro.id))
         nome = QTableWidgetItem(cadastro.nome)
-        cpf = QTableWidgetItem(cadastro.cpf)
-        cartao_sus = QTableWidgetItem(cadastro.cartao_sus)
+        cpf = QTableWidgetItem(str(cadastro.cpf))
+        cartao_sus = QTableWidgetItem(str(cadastro.cartao_sus))
         telefone = QTableWidgetItem(cadastro.telefone)
         endereco = QTableWidgetItem(cadastro.endereco)
+        data = QTableWidgetItem(cadastro.data)
+        data_nascimento = QTableWidgetItem(cadastro.data_nascimento)
+        especialidade = QTableWidgetItem(cadastro.especialidade)
         
-    
         self.setItem(rowCount, 0, id)
         self.setItem(rowCount, 1, nome)
         self.setItem(rowCount, 2, cpf)
         self.setItem(rowCount, 3, cartao_sus)
         self.setItem(rowCount, 4, telefone)  
-        self.setItem(rowCount, 5, endereco)      
+        self.setItem(rowCount, 5, endereco)  
+        self.setItem(rowCount, 6, data)  
+        self.setItem(rowCount, 7, data_nascimento) 
+        self.setItem(rowCount, 8, especialidade)       
 
     def on_click(self):
         selected_row = self.current_Row()
