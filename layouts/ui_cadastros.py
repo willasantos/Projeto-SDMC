@@ -22,7 +22,7 @@ class CadCadastro(QWidget):
         self.bt_salvar.clicked.connect(self.salveCadastro)
         self.bt_limpar.clicked.connect(self.limparCampos)
         self.bt_excluir.clicked.connect(self.excluirCadastro)  
-        self.combo_medico.currentIndexChanged(self.text_edited)
+        #self.combo_medico.currentIndexChanged(self.text_edited)
 
     def text_edited(self, c):
         self.table.carregaDados(c)        
