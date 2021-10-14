@@ -24,8 +24,8 @@ class CadCadastro(QWidget):
         self.bt_excluir.clicked.connect(self.excluirCadastro)  
         #self.combo_medico.currentIndexChanged(self.text_edited)
 
-    def text_edited(self, c):
-        self.table.carregaDados(c)        
+    #def text_edited(self, c):
+        #self.table.carregaDados(c)   
 
     def salveCadastro(self):
         novo = self.gettCadastro()  
@@ -35,7 +35,6 @@ class CadCadastro(QWidget):
             else:
                 novo.id = self.cadastroAtual.id
                 self.table.atualizar(novo)
-
             self.limparCampos()
 
     def getCad(self):
@@ -59,6 +58,8 @@ class CadCadastro(QWidget):
         self.cartao_sus.setText("")
         self.telefone.setText("")
         self.endereco.setText("")
+        self.data.setText("")
+        self.data_nascimento.setText("")
         self.especialidade.setText("")
 
         self.salvar.setText("Salvar")
@@ -86,7 +87,8 @@ class CadCadastro(QWidget):
     def finalizaCadastro(self):
         data = self.dateEdit.dateTime().toString('dd/MM/yyyy')
         data_nascimento = self.dateEdit_2.dateTime().toString('dd/MM/yyyy')
-        novoCadastro = (-1, data_nascimento, data)
+        novoCadastro = (-1, data, data_nascimento)
         CadModel.addCadastro(novoCadastro)   
 
         self.limparCampos()            
+ 

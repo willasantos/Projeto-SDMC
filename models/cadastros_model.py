@@ -41,33 +41,11 @@ def getCadastro(id):
     conn.close()
     return novoCadastro    
 
-"""def getPesquisa(especialidade):
-    conn = db.connect_db()
-    cursor = conn.cursor()
-    cursor.execute("SELECT * FROM cadastro  c WHERE c.especialidade; "[especialidade])
-    lista_cadastro = []
-
-    for e in cursor.fetchall():
-        id = e[0]
-        nome = e[1]
-        cpf = e[2]
-        cartao_sus = e[3]
-        telefone = e[4]
-        endereco = e[5]
-        data = e[6]
-        data_nascimento = e[7]
-        especialidade = e[8]
-        novoCadastro = Cadastro(id, nome, cpf, cartao_sus, telefone, endereco, data, data_nascimento, especialidade)
-        lista_cadastro.append(novoCadastro)
-
-    conn.close()
-    return lista_cadastro        """
-
 def addCadastro(cadastro):
     conn = db.connect_db()
     cursor = conn.cursor()
     sql = """INSERT INTO cadastro (nome, cpf, cartao_sus, telefone, endereco, data, data_nascimento, especialidade)
-                      VALUES (?, ?, ?, ?, ?, ?, ?)"""
+                      VALUES (?, ?, ?, ?, ?, ?, ?, ?)"""
     cursor.execute(sql, [cadastro.nome, cadastro.cpf, cadastro.cartao_sus, cadastro.telefone, cadastro.endereco, cadastro.data, cadastro.data_nascimento, cadastro.especialidade])
     conn.commit()
     conn.close()

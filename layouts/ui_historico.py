@@ -12,12 +12,12 @@ class HistoricoConsulta(QWidget):
          super().__init__()
          uic.loadUi("ui/historico.ui", self)
 
-         self.cadastro = cadastro
+         self.cadastroAtual = None
          self.configTable()
-         #self.inserirDados()
+         self.inserirDados()
          
     def inserirDados(self):
-        lista_cadastro = CadModel.getCadastro(self.cadastro.id)
+        lista_cadastro = CadModel.gettCadastro()
 
         for c in lista_cadastro:
             rowCount = self.tableWidget.rowCount()
@@ -75,7 +75,7 @@ class MeuBotao(QWidget):
         self.setLayout(layout)
 
     def typeDelete(self):
-        self.btn.setIcon(QIcon("icons/Button delete"))  
+        self.btn.setIcon(QIcon("icons/Button delete.png"))  
         self.btn.clicked.connect(self.remover)
         self.btn.setToolTip(
             "Remover venda?") 

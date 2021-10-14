@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1167</width>
-    <height>577</height>
+    <width>1226</width>
+    <height>688</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,9 +17,9 @@
    <widget class="QStackedWidget" name="stackedWidget">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>-50</y>
-      <width>1011</width>
+      <x>30</x>
+      <y>-30</y>
+      <width>1091</width>
       <height>581</height>
      </rect>
     </property>
@@ -27,9 +27,9 @@
      <widget class="QWidget" name="horizontalLayoutWidget">
       <property name="geometry">
        <rect>
-        <x>550</x>
+        <x>520</x>
         <y>80</y>
-        <width>381</width>
+        <width>561</width>
         <height>201</height>
        </rect>
       </property>
@@ -38,13 +38,13 @@
         <widget class="QLabel" name="label">
          <property name="font">
           <font>
-           <pointsize>12</pointsize>
+           <pointsize>18</pointsize>
            <weight>75</weight>
            <bold>true</bold>
           </font>
          </property>
          <property name="text">
-          <string>SISTEMA DE MARCAÇÂO DE CONSULTAS</string>
+          <string>SISTEMA DE MARCAÇÃO DE CONSULTAS</string>
          </property>
         </widget>
        </item>
@@ -56,7 +56,7 @@
         <x>20</x>
         <y>140</y>
         <width>411</width>
-        <height>431</height>
+        <height>441</height>
        </rect>
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout_2">
@@ -117,9 +117,9 @@
          <widget class="QPushButton" name="btn_entrar">
           <property name="geometry">
            <rect>
-            <x>90</x>
-            <y>260</y>
-            <width>101</width>
+            <x>70</x>
+            <y>310</y>
+            <width>241</width>
             <height>23</height>
            </rect>
           </property>
@@ -390,15 +390,15 @@
      <widget class="QLabel" name="label_5">
       <property name="geometry">
        <rect>
-        <x>466</x>
-        <y>320</y>
-        <width>421</width>
+        <x>560</x>
+        <y>310</y>
+        <width>481</width>
         <height>251</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <pointsize>9</pointsize>
+        <pointsize>11</pointsize>
         <weight>50</weight>
         <bold>false</bold>
        </font>
@@ -409,28 +409,23 @@
      </widget>
     </widget>
     <widget class="QWidget" name="page_enter">
-     <widget class="QStackedWidget" name="stackedWidget_2">
+     <widget class="QWidget" name="horizontalLayoutWidget_3">
       <property name="geometry">
        <rect>
-        <x>70</x>
-        <y>120</y>
-        <width>781</width>
-        <height>431</height>
+        <x>29</x>
+        <y>89</y>
+        <width>971</width>
+        <height>481</height>
        </rect>
       </property>
-      <widget class="QWidget" name="page">
-       <widget class="QListWidget" name="listWidget">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>20</y>
-          <width>501</width>
-          <height>411</height>
-         </rect>
-        </property>
-       </widget>
-      </widget>
-      <widget class="QWidget" name="page_2"/>
+      <layout class="QHBoxLayout" name="horizontalLayout_3">
+       <item>
+        <widget class="QStackedWidget" name="stackedWidget_2"/>
+       </item>
+       <item>
+        <widget class="QListWidget" name="listWidget"/>
+       </item>
+      </layout>
      </widget>
     </widget>
    </widget>
@@ -440,7 +435,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1167</width>
+     <width>1226</width>
      <height>21</height>
     </rect>
    </property>
