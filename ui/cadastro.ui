@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>885</width>
-    <height>606</height>
+    <width>687</width>
+    <height>521</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,10 +16,10 @@
   <widget class="QWidget" name="verticalLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>230</x>
-     <y>280</y>
-     <width>251</width>
-     <height>151</height>
+     <x>80</x>
+     <y>320</y>
+     <width>531</width>
+     <height>141</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
@@ -31,11 +31,37 @@
      </widget>
     </item>
     <item>
+     <spacer name="verticalSpacer">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item>
      <widget class="QPushButton" name="bt_limpar">
       <property name="text">
        <string>Limpar</string>
       </property>
      </widget>
+    </item>
+    <item>
+     <spacer name="verticalSpacer_2">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
     </item>
     <item>
      <widget class="QPushButton" name="bt_excluir">
@@ -49,13 +75,13 @@
   <widget class="QWidget" name="formLayoutWidget_2">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>30</y>
-     <width>831</width>
-     <height>204</height>
+     <x>80</x>
+     <y>20</y>
+     <width>531</width>
+     <height>261</height>
     </rect>
    </property>
-   <layout class="QFormLayout" name="formLayout_2">
+   <layout class="QGridLayout" name="gridLayout">
     <item row="0" column="0">
      <widget class="QLabel" name="label_6">
       <property name="text">
@@ -65,6 +91,20 @@
     </item>
     <item row="0" column="1">
      <widget class="QLineEdit" name="nome_com"/>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLabel" name="label_12">
+      <property name="text">
+       <string>Data de Nascimento:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QDateEdit" name="dateEdit">
+      <property name="calendarPopup">
+       <bool>true</bool>
+      </property>
+     </widget>
     </item>
     <item row="2" column="0">
      <widget class="QLabel" name="label_7">
@@ -113,34 +153,6 @@
       </property>
      </widget>
     </item>
-    <item row="1" column="0">
-     <widget class="QLabel" name="label_12">
-      <property name="text">
-       <string>Data de Nascimento:</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="1">
-     <widget class="QDateEdit" name="dateEdit">
-      <property name="calendarPopup">
-       <bool>true</bool>
-      </property>
-     </widget>
-    </item>
-    <item row="7" column="0">
-     <widget class="QLabel" name="label_13">
-      <property name="text">
-       <string>Dia da Consulta:</string>
-      </property>
-     </widget>
-    </item>
-    <item row="7" column="1">
-     <widget class="QDateEdit" name="dateEdit_2">
-      <property name="calendarPopup">
-       <bool>true</bool>
-      </property>
-     </widget>
-    </item>
     <item row="6" column="1">
      <widget class="QComboBox" name="combo_medico">
       <property name="editable">
@@ -174,6 +186,35 @@
         <string>Clinico Geral</string>
        </property>
       </item>
+      <item>
+       <property name="text">
+        <string>Oftamologista</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Dentista</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Cirurgiao</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+    <item row="7" column="0">
+     <widget class="QLabel" name="label_13">
+      <property name="text">
+       <string>Dia da Consulta:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="1">
+     <widget class="QDateEdit" name="dateEdit_2">
+      <property name="calendarPopup">
+       <bool>true</bool>
+      </property>
      </widget>
     </item>
    </layout>

@@ -75,10 +75,10 @@ class MeuBotao(QWidget):
         self.setLayout(layout)
 
     def typeDelete(self):
-        self.btn.setIcon(QIcon("icons/Button delete.png"))  
+        self.btn.setIcon(QIcon("icons/Button delete"))  
         self.btn.clicked.connect(self.remover)
         self.btn.setToolTip(
-            "Remover venda?") 
+            "Remover cadastro ?") 
 
         self.btn.setIconSize(QSize(20, 20))
 

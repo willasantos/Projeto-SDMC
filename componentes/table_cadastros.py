@@ -4,11 +4,11 @@ import models.cadastros_model as CadModel
 
 class QuadroCadastro(QTableWidget):
     def __init__(self, janela_prince):
-        super().__init__(0, 6)
+        super().__init__(0, 9)
         self.janela_prince = janela_prince
 
         headers = ["ID", "NOME", "CPF", "CARTAO_SUS", "TELEFONE", "ENDERECO", "DATA", "DATA_NASCIMENTO", "ESPECIALIDADE"]
-        self.setHorizontalHeaderLabels(headers)   
+        self.setHorizontalHeaderLabels(headers)
 
         self.configuracao()
         self.carregaDados()
@@ -20,7 +20,8 @@ class QuadroCadastro(QTableWidget):
         self.horizontalHeader().setSectionResizeMode(1,QHeaderView.Stretch)
         self.horizontalHeader().setSectionResizeMode(2,QHeaderView.ResizeToContents)
         self.horizontalHeader().setSectionResizeMode(3,QHeaderView.ResizeToContents)
-
+        self.verticalHeader().setSectionResizeMode(
+            QHeaderView.ResizeToContents)
         self.setEditTriggers(QTableWidget.NoEditTriggers)
         self.setSelectionBehavior(QTableWidget.SelectRows)
         self.clicked.connect(self.on_click) 

@@ -40,14 +40,14 @@ class MainWindow(QMainWindow):
         self.btn_entrar.clicked.connect(self.Iniciar)
 
     def Iniciar(self):
-        self.stackedWidget.setCurrentIndex(1)
+        self.stackedWidget_geral.setCurrentIndex(1)
         self.statusbar.showMessage("Usuário: recepcionista")
 
     def mostrarJanelas(self):
-        self.stackedWidget.insertWidget(0, CadCadastro())
-        self.stackedWidget.insertWidget(1, HistoricoConsulta(self))
+        self.stackedWidget_2.insertWidget(0, CadCadastro())
+        self.stackedWidget_2.insertWidget(1, HistoricoConsulta(self))
 
     def display(self, index):
         self.mostrarJanelas()
-        self.stackedWidget.setCurrentIndex(index) 
+        self.stackedWidget_2.setCurrentIndex(index) 
         self.listWidget.setCurrentRow(index)   

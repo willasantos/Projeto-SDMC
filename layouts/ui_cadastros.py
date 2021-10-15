@@ -11,10 +11,10 @@ class CadCadastro(QWidget):
         super(). __init__()
         uic.loadUi("ui/cadastro.ui", self)
         self.table = QuadroCadastro(self)
-
         self.verticalLayout.addWidget(self.table)
         self.cadastroAtual = None
         self.setEventos()
+        self.carregaCadastro()
         self.dateEdit.setDate(QDate.currentDate())
         self.dateEdit_2.setDate(QDate.currentDate())
 
@@ -22,10 +22,13 @@ class CadCadastro(QWidget):
         self.bt_salvar.clicked.connect(self.salveCadastro)
         self.bt_limpar.clicked.connect(self.limparCampos)
         self.bt_excluir.clicked.connect(self.excluirCadastro)  
-        #self.combo_medico.currentIndexChanged(self.text_edited)
 
-    #def text_edited(self, c):
-        #self.table.carregaDados(c)   
+    def carregaCadastro(self):
+        self.lista_cadastro = CadModel.gettCadastro()
+        lista_combo = []
+        for cadastro in self.lista_cadastro:
+            lista_combo.append(cadastro.especialidade)   
+        self.combo_medico.addItems(lista_combo)
 
     def salveCadastro(self):
         novo = self.gettCadastro()  
@@ -47,8 +50,8 @@ class CadCadastro(QWidget):
         data_nascimento = self.data_nascimento.text()
         especialidade = self.especialidade.text()           
 
-        if((nome != "")and (cpf != "") and (cartao_sus != "")and (telefone != "") and (endereco != "") and (data != "") and (data_nascimento != "") and (especialidade != "")):
-            return Cadastro(-1, nome, cpf, cartao_sus, telefone, endereco, data, data_nascimento, especialidade)
+        if((nome != "")and (cpf != "") and (cartao_sus != "")and (telefone != "") and  (endereco != "") and (data != "") and (data_nascimento != "") and (especialidade != "")):
+            return Cadastro(-1, nome, cpf, cartao_sus, telefone, endereco,data, data_nascimento, especialidade)
         return None
 
     def limparCampos(self):
