@@ -6,78 +6,19 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>687</width>
-    <height>521</height>
+    <width>1020</width>
+    <height>731</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Cadastro</string>
   </property>
-  <widget class="QWidget" name="verticalLayoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>80</x>
-     <y>320</y>
-     <width>531</width>
-     <height>141</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout">
-    <item>
-     <widget class="QPushButton" name="bt_salvar">
-      <property name="text">
-       <string>Salvar</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <spacer name="verticalSpacer">
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
-      </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>20</width>
-        <height>40</height>
-       </size>
-      </property>
-     </spacer>
-    </item>
-    <item>
-     <widget class="QPushButton" name="bt_limpar">
-      <property name="text">
-       <string>Limpar</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <spacer name="verticalSpacer_2">
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
-      </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>20</width>
-        <height>40</height>
-       </size>
-      </property>
-     </spacer>
-    </item>
-    <item>
-     <widget class="QPushButton" name="bt_excluir">
-      <property name="text">
-       <string>Excluir</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
   <widget class="QWidget" name="formLayoutWidget_2">
    <property name="geometry">
     <rect>
-     <x>80</x>
+     <x>20</x>
      <y>20</y>
-     <width>531</width>
+     <width>911</width>
      <height>261</height>
     </rect>
    </property>
@@ -100,7 +41,7 @@
      </widget>
     </item>
     <item row="1" column="1">
-     <widget class="QDateEdit" name="dateEdit">
+     <widget class="QDateEdit" name="data_nascimento">
       <property name="calendarPopup">
        <bool>true</bool>
       </property>
@@ -211,13 +152,63 @@
      </widget>
     </item>
     <item row="7" column="1">
-     <widget class="QDateEdit" name="dateEdit_2">
+     <widget class="QDateEdit" name="data_consulta">
       <property name="calendarPopup">
        <bool>true</bool>
       </property>
      </widget>
     </item>
    </layout>
+  </widget>
+  <widget class="QPushButton" name="bt_salvar">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>300</y>
+     <width>139</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Salvar</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="bt_limpar">
+   <property name="geometry">
+    <rect>
+     <x>390</x>
+     <y>300</y>
+     <width>139</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Limpar</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="bt_excluir">
+   <property name="geometry">
+    <rect>
+     <x>780</x>
+     <y>300</y>
+     <width>139</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Excluir</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="horizontalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>340</y>
+     <width>1001</width>
+     <height>361</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout"/>
   </widget>
  </widget>
  <resources/>

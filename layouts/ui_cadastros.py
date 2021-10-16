@@ -11,12 +11,12 @@ class CadCadastro(QWidget):
         super(). __init__()
         uic.loadUi("ui/cadastro.ui", self)
         self.table = QuadroCadastro(self)
-        self.verticalLayout.addWidget(self.table)
+        self.horizontalLayout.addWidget(self.table)
         self.cadastroAtual = None
         self.setEventos()
         self.carregaCadastro()
-        self.dateEdit.setDate(QDate.currentDate())
-        self.dateEdit_2.setDate(QDate.currentDate())
+        self.data_nascimento.setDate(QDate.currentDate())
+        self.data_consulta.setDate(QDate.currentDate())
 
     def setEventos(self):
         self.bt_salvar.clicked.connect(self.salveCadastro)
@@ -31,7 +31,7 @@ class CadCadastro(QWidget):
         self.combo_medico.addItems(lista_combo)
 
     def salveCadastro(self):
-        novo = self.gettCadastro()  
+        novo = self.getCad()  
         if novo != None:
             if self.cadastroAtual == None:
                 self.table.adicionar(novo)
@@ -41,14 +41,14 @@ class CadCadastro(QWidget):
             self.limparCampos()
 
     def getCad(self):
-        nome = self.nome.text()
+        nome = self.nome_com.text()
         cpf = self.cpf.text()
         cartao_sus = self.cartao_sus.text()
         telefone = self.telefone.text()
         endereco = self.endereco.text()     
-        data = self.data.text()
-        data_nascimento = self.data_nascimento.text()
-        especialidade = self.especialidade.text()           
+        data = self.data_consulta.dateTime().toString('dd/MM/yyyy')
+        data_nascimento = self.data_nascimento.dateTime().toString('dd/MM/yyyy')
+        especialidade = self.combo_medico.currentText()           
 
         if((nome != "")and (cpf != "") and (cartao_sus != "")and (telefone != "") and  (endereco != "") and (data != "") and (data_nascimento != "") and (especialidade != "")):
             return Cadastro(-1, nome, cpf, cartao_sus, telefone, endereco,data, data_nascimento, especialidade)
@@ -56,40 +56,39 @@ class CadCadastro(QWidget):
 
     def limparCampos(self):
         self.cadastroAtual = None
-        self.nome.setText("")
+        self.nome_com.setText("")
         self.cpf.setText("")
         self.cartao_sus.setText("")
         self.telefone.setText("")
         self.endereco.setText("")
-        self.data.setText("")
-        self.data_nascimento.setText("")
-        self.especialidade.setText("")
+        self.data_nascimento.setDate(QDate.currentDate())
+        self.data_consulta.setDate(QDate.currentDate())
 
-        self.salvar.setText("Salvar")
-        self.excluir.setEnabled(False)
+        self.bt_salvar.setText("Salvar")
+        self.bt_excluir.setEnabled(False)
         self.table.carregaDados()
 
-    def inserirCadastro(self, cadastro):
+    def inserirCampos(self, cadastro):
         self.cadastroAtual = cadastro
-        self.nome.setText(cadastro.nome)
-        self.cpf.setText(cadastro.cpf)
-        self.cartao_sus.setText(cadastro.cartao_sus)
-        self.telefone.setText(cadastro.telefone)
+        self.nome_com.setText(cadastro.nome)
+        self.cpf.setText(str(cadastro.cpf))
+        self.cartao_sus.setText(str(cadastro.cartao_sus))
+        self.telefone.setText(str(cadastro.telefone))
         self.endereco.setText(cadastro.endereco)
-        self.data.setText(cadastro.data)
-        self.data_nascimento.setText(cadastro.data_nascimento)
-        self.especialidade.setText(cadastro.especialidade)
+        self.data_nascimento.setDate(QDate.currentDate())
+        self.data_consulta.setDate(QDate.currentDate())
+        #self.especialidade.setText(cadastro.especialidade)
 
-        self.salvar.setText("Atualizar")
-        self.excluir.setenabled(True)
+        self.bt_salvar.setText("Atualizar")
+        self.bt_excluir.setEnabled(True)
 
     def excluirCadastro(self):
         self.table.deletar(self.cadastroAtual)
         self.limparCampos()               
 
     def finalizaCadastro(self):
-        data = self.dateEdit.dateTime().toString('dd/MM/yyyy')
-        data_nascimento = self.dateEdit_2.dateTime().toString('dd/MM/yyyy')
+        data = self.data_consulta.dateTime().toString('dd/MM/yyyy')
+        data_nascimento = self.data_nascimento.dateTime().toString('dd/MM/yyyy')
         novoCadastro = (-1, data, data_nascimento)
         CadModel.addCadastro(novoCadastro)   
 

@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1226</width>
+    <width>1455</width>
     <height>688</height>
    </rect>
   </property>
@@ -19,7 +19,7 @@
      <rect>
       <x>30</x>
       <y>-30</y>
-      <width>1091</width>
+      <width>1371</width>
       <height>661</height>
      </rect>
     </property>
@@ -29,7 +29,7 @@
        <rect>
         <x>520</x>
         <y>80</y>
-        <width>561</width>
+        <width>502</width>
         <height>201</height>
        </rect>
       </property>
@@ -44,7 +44,7 @@
           </font>
          </property>
          <property name="text">
-          <string>SISTEMA DE MARCAÇÃO DE CONSULTAS</string>
+          <string>SDMC- Sistema de Marcação de Consultas</string>
          </property>
         </widget>
        </item>
@@ -253,9 +253,9 @@
       <property name="geometry">
        <rect>
         <x>40</x>
-        <y>60</y>
-        <width>381</width>
-        <height>111</height>
+        <y>50</y>
+        <width>201</width>
+        <height>81</height>
        </rect>
       </property>
       <property name="palette">
@@ -412,9 +412,9 @@
      <widget class="QWidget" name="horizontalLayoutWidget_3">
       <property name="geometry">
        <rect>
-        <x>9</x>
-        <y>59</y>
-        <width>1031</width>
+        <x>10</x>
+        <y>30</y>
+        <width>1301</width>
         <height>581</height>
        </rect>
       </property>
@@ -424,10 +424,16 @@
        </item>
        <item>
         <widget class="QListWidget" name="listWidget">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>200</verstretch>
+          </sizepolicy>
+         </property>
          <property name="maximumSize">
           <size>
            <width>300</width>
-           <height>16777215</height>
+           <height>200</height>
           </size>
          </property>
         </widget>
@@ -442,7 +448,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1226</width>
+     <width>1455</width>
      <height>21</height>
     </rect>
    </property>

@@ -24,7 +24,7 @@ def gettCadastro():
 def getCadastro(id):
     conn = db.connect_db()
     cursor = conn.cursor()
-    sql = """SELECT * FROM cadastro WHERE id = :"""
+    sql = """SELECT * FROM cadastro WHERE id = ?;"""
     cursor.execute(sql, [id])
 
     ponto = cursor.fetchall()[0]
