@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1455</width>
-    <height>688</height>
+    <width>1450</width>
+    <height>709</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,7 +20,7 @@
       <x>30</x>
       <y>-30</y>
       <width>1371</width>
-      <height>661</height>
+      <height>701</height>
      </rect>
     </property>
     <widget class="QWidget" name="page_home">
@@ -427,7 +427,7 @@
          <property name="sizePolicy">
           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
            <horstretch>0</horstretch>
-           <verstretch>200</verstretch>
+           <verstretch>0</verstretch>
           </sizepolicy>
          </property>
          <property name="maximumSize">
@@ -448,7 +448,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1455</width>
+     <width>1450</width>
      <height>21</height>
     </rect>
    </property>

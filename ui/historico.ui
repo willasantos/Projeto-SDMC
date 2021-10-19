@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>794</width>
+    <width>865</width>
     <height>654</height>
    </rect>
   </property>
@@ -16,7 +16,7 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>10</x>
+     <x>280</x>
      <y>10</y>
      <width>191</width>
      <height>61</height>
@@ -38,7 +38,7 @@
     <rect>
      <x>10</x>
      <y>70</y>
-     <width>761</width>
+     <width>831</width>
      <height>541</height>
     </rect>
    </property>
@@ -50,10 +50,15 @@
      <rect>
       <x>10</x>
       <y>30</y>
-      <width>741</width>
+      <width>801</width>
       <height>471</height>
      </rect>
     </property>
+    <column>
+     <property name="text">
+      <string>%</string>
+     </property>
+    </column>
     <column>
      <property name="text">
       <string>ID</string>
@@ -71,21 +76,17 @@
     </column>
     <column>
      <property name="text">
-      <string>Data  Consulta</string>
+      <string> Consulta</string>
      </property>
     </column>
     <column>
      <property name="text">
-      <string>Especialidade</string>
+      <string>Medico</string>
      </property>
     </column>
     <column>
      <property name="text">
-      <string/>
-     </property>
-     <property name="icon">
-      <iconset>
-       <normaloff>../icons/Button delete.png</normaloff>../icons/Button delete.png</iconset>
+      <string>*</string>
      </property>
     </column>
    </widget>

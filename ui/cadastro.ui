@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1020</width>
-    <height>731</height>
+    <height>662</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,77 +16,13 @@
   <widget class="QWidget" name="formLayoutWidget_2">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>20</y>
-     <width>911</width>
-     <height>261</height>
+     <x>10</x>
+     <y>300</y>
+     <width>971</width>
+     <height>271</height>
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout">
-    <item row="0" column="0">
-     <widget class="QLabel" name="label_6">
-      <property name="text">
-       <string>Nome Completo:</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="1">
-     <widget class="QLineEdit" name="nome_com"/>
-    </item>
-    <item row="1" column="0">
-     <widget class="QLabel" name="label_12">
-      <property name="text">
-       <string>Data de Nascimento:</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="1">
-     <widget class="QDateEdit" name="data_nascimento">
-      <property name="calendarPopup">
-       <bool>true</bool>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="0">
-     <widget class="QLabel" name="label_7">
-      <property name="text">
-       <string>CPF:</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="1">
-     <widget class="QLineEdit" name="cpf"/>
-    </item>
-    <item row="3" column="0">
-     <widget class="QLabel" name="label_8">
-      <property name="text">
-       <string>Cartão do SUS:</string>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="1">
-     <widget class="QLineEdit" name="cartao_sus"/>
-    </item>
-    <item row="4" column="0">
-     <widget class="QLabel" name="label_9">
-      <property name="text">
-       <string>Telefone:</string>
-      </property>
-     </widget>
-    </item>
-    <item row="4" column="1">
-     <widget class="QLineEdit" name="telefone"/>
-    </item>
-    <item row="5" column="0">
-     <widget class="QLabel" name="label_10">
-      <property name="text">
-       <string>Endereço:</string>
-      </property>
-     </widget>
-    </item>
-    <item row="5" column="1">
-     <widget class="QLineEdit" name="endereco"/>
-    </item>
     <item row="6" column="0">
      <widget class="QLabel" name="label_11">
       <property name="text">
@@ -94,7 +30,14 @@
       </property>
      </widget>
     </item>
-    <item row="6" column="1">
+    <item row="7" column="0">
+     <widget class="QLabel" name="label_13">
+      <property name="text">
+       <string>Dia da Consulta:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="3">
      <widget class="QComboBox" name="combo_medico">
       <property name="editable">
        <bool>false</bool>
@@ -144,27 +87,80 @@
       </item>
      </widget>
     </item>
-    <item row="7" column="0">
-     <widget class="QLabel" name="label_13">
+    <item row="5" column="3">
+     <widget class="QLineEdit" name="endereco"/>
+    </item>
+    <item row="0" column="0">
+     <widget class="QLabel" name="label_6">
       <property name="text">
-       <string>Dia da Consulta:</string>
+       <string>Nome Completo:</string>
       </property>
      </widget>
     </item>
-    <item row="7" column="1">
-     <widget class="QDateEdit" name="data_consulta">
+    <item row="1" column="0">
+     <widget class="QLabel" name="label_12">
+      <property name="text">
+       <string>Data de Nascimento:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="3">
+     <widget class="QLineEdit" name="nome_com"/>
+    </item>
+    <item row="1" column="3">
+     <widget class="QDateEdit" name="data_nascimento">
       <property name="calendarPopup">
        <bool>true</bool>
       </property>
      </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QLabel" name="label_7">
+      <property name="text">
+       <string>CPF:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="3">
+     <widget class="QLineEdit" name="cpf"/>
+    </item>
+    <item row="3" column="0">
+     <widget class="QLabel" name="label_8">
+      <property name="text">
+       <string>Cartão do SUS:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="0">
+     <widget class="QLabel" name="label_9">
+      <property name="text">
+       <string>Telefone:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="3">
+     <widget class="QLineEdit" name="cartao_sus"/>
+    </item>
+    <item row="4" column="3">
+     <widget class="QLineEdit" name="telefone"/>
+    </item>
+    <item row="5" column="0">
+     <widget class="QLabel" name="label_10">
+      <property name="text">
+       <string>Endereço:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="3">
+     <widget class="QDateEdit" name="data_consulta"/>
     </item>
    </layout>
   </widget>
   <widget class="QPushButton" name="bt_salvar">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>300</y>
+     <x>20</x>
+     <y>270</y>
      <width>139</width>
      <height>23</height>
     </rect>
@@ -176,21 +172,21 @@
   <widget class="QPushButton" name="bt_limpar">
    <property name="geometry">
     <rect>
-     <x>390</x>
-     <y>300</y>
-     <width>139</width>
+     <x>460</x>
+     <y>270</y>
+     <width>151</width>
      <height>23</height>
     </rect>
    </property>
    <property name="text">
-    <string>Limpar</string>
+    <string>Limpar Campos</string>
    </property>
   </widget>
   <widget class="QPushButton" name="bt_excluir">
    <property name="geometry">
     <rect>
-     <x>780</x>
-     <y>300</y>
+     <x>840</x>
+     <y>270</y>
      <width>139</width>
      <height>23</height>
     </rect>
@@ -203,9 +199,9 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>340</y>
-     <width>1001</width>
-     <height>361</height>
+     <y>10</y>
+     <width>971</width>
+     <height>251</height>
     </rect>
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout"/>

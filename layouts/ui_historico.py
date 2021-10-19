@@ -4,8 +4,9 @@ from PyQt5.QtGui import QIcon
 from PyQt5 import uic
 
 import models.cadastros_model as CadModel
+import layouts.ui_info as Info
 
-TYPE = {'remove': 0}
+TYPE = {'remove': 0, 'info': 1}
 
 class HistoricoConsulta(QWidget):
     def __init__(self, cadastro ):
@@ -14,9 +15,9 @@ class HistoricoConsulta(QWidget):
 
          self.cadastroAtual = None
          self.configTable()
-         self.inserirDados()
+         self.inserirDados(self)
          
-    def inserirDados(self):
+    def inserirDados(self, item):
         lista_cadastro = CadModel.gettCadastro()
 
         for c in lista_cadastro:
@@ -33,12 +34,16 @@ class HistoricoConsulta(QWidget):
             data.setTextAlignment(Qt.AlignCenter)
             especialidade = QTableWidgetItem(str(c.especialidade))
             especialidade.setTextAlignment(Qt.AlignCenter)
-
-            self.tableWidget.setItem(rowCount, 0, id)
-            self.tableWidget.setItem(rowCount, 1, nome)
-            self.tableWidget.setItem(rowCount, 2, cpf)
-            self.tableWidget.setItem(rowCount, 3, data)
-            self.tableWidget.setItem(rowCount, 4, especialidade)
+            
+            self.tableWidget.setCellWidget(
+            rowCount, 0, MeuBotao(item, self, TYPE['info']))
+            self.tableWidget.setItem(rowCount, 1, id)
+            self.tableWidget.setItem(rowCount, 2, nome)
+            self.tableWidget.setItem(rowCount, 3, cpf)
+            self.tableWidget.setItem(rowCount, 4, data)
+            self.tableWidget.setItem(rowCount, 5, especialidade)
+            self.tableWidget.setCellWidget(
+            rowCount, 6, MeuBotao(item, self, TYPE['remove']))
 
     def configTable(self):
         self.tableWidget.verticalHeader().setVisible(False)
@@ -65,6 +70,8 @@ class MeuBotao(QWidget):
 
         if type == TYPE['remove']:
             self.typeDelete()
+        else:
+            self.typeInfo()    
     
         self.btn.setStyleSheet(
             'QPushButton {background-color: #00FFFFFF; border:  none}')
@@ -74,8 +81,15 @@ class MeuBotao(QWidget):
         layout.addWidget(self.btn)
         self.setLayout(layout)
 
+    def typeInfo(self):
+        self.btn.setIcon(QIcon("icons/informações.png.png"))  
+        #self.btn.clicked.connect(self.maisInfo)
+        self.btn.setToolTip(
+            "Mais informações ") 
+        self.btn.setIconSize(QSize(25, 25))    
+
     def typeDelete(self):
-        self.btn.setIcon(QIcon("icons/Button delete"))  
+        self.btn.setIcon(QIcon("icons/Button delete.png"))  
         self.btn.clicked.connect(self.remover)
         self.btn.setToolTip(
             "Remover cadastro ?") 
@@ -84,3 +98,7 @@ class MeuBotao(QWidget):
 
     def remover(self):
         pass
+"""
+    def maisInfo(self):
+        self.w = Info(self.info)
+        self.w.show()"""

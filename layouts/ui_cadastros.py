@@ -77,7 +77,6 @@ class CadCadastro(QWidget):
         self.endereco.setText(cadastro.endereco)
         self.data_nascimento.setDate(QDate.currentDate())
         self.data_consulta.setDate(QDate.currentDate())
-        #self.especialidade.setText(cadastro.especialidade)
 
         self.bt_salvar.setText("Atualizar")
         self.bt_excluir.setEnabled(True)

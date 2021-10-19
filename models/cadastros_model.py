@@ -54,7 +54,7 @@ def editCadastro(cadastro):
     conn = db.connect_db()
     cursor = conn.cursor()
     sql = """UPDATE cadastro SET nome=?, cpf=?, cartao_sus=?, telefone=?, endereco=?, data=?, data_nascimento=?, especialidade=? WHERE id=?"""
-    cursor.execute(sql[cadastro.nome, cadastro.cpf, cadastro.cartao_sus, cadastro.telefone, cadastro.endereco,cadastro.data,cadastro.data_nascimento,cadastro.especialidade, cadastro.id])
+    cursor.execute(sql,[cadastro.nome, cadastro.cpf, cadastro.cartao_sus, cadastro.telefone, cadastro.endereco,cadastro.data,cadastro.data_nascimento,cadastro.especialidade, cadastro.id])
     conn.commit()
     conn.close()
 
