@@ -20,7 +20,7 @@
       <x>30</x>
       <y>-30</y>
       <width>1371</width>
-      <height>701</height>
+      <height>661</height>
      </rect>
     </property>
     <widget class="QWidget" name="page_home">

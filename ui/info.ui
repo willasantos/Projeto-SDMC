@@ -6,25 +6,145 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>517</width>
-    <height>360</height>
+    <width>889</width>
+    <height>570</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Infromacoes sobre a consulta</string>
+   <string>Informações sobre a consulta</string>
   </property>
   <widget class="QGroupBox" name="groupBox">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>20</y>
-     <width>471</width>
-     <height>301</height>
+     <x>10</x>
+     <y>10</y>
+     <width>851</width>
+     <height>541</height>
     </rect>
    </property>
    <property name="title">
-    <string>Sobre a consulta</string>
+    <string>GroupBox</string>
    </property>
+   <widget class="QTableWidget" name="tableWidget">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>20</y>
+      <width>481</width>
+      <height>401</height>
+     </rect>
+    </property>
+    <column>
+     <property name="text">
+      <string>Paciente</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Medico</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Especialidade</string>
+     </property>
+    </column>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>30</y>
+      <width>101</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Nome do Paciente:</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="combo_paciente">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>70</y>
+      <width>251</width>
+      <height>22</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>120</y>
+      <width>81</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Especialidade</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="combo_esp">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>150</y>
+      <width>251</width>
+      <height>22</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>190</y>
+      <width>81</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Medico:</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="line_end">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>230</y>
+      <width>281</width>
+      <height>20</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="salvar">
+    <property name="geometry">
+     <rect>
+      <x>54</x>
+      <y>290</y>
+      <width>221</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Salvar</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="apagar">
+    <property name="geometry">
+     <rect>
+      <x>450</x>
+      <y>470</y>
+      <width>231</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Apagar A Consulta</string>
+    </property>
+   </widget>
   </widget>
  </widget>
  <resources/>
