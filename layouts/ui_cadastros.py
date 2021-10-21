@@ -46,7 +46,7 @@ class CadCadastro(QWidget):
         cartao_sus = self.cartao_sus.text()
         telefone = self.telefone.text()
         endereco = self.endereco.text()     
-        data = self.data_consulta.dateTime().toString('dd/MM/yyyy')
+        data = self.data_consulta.dateTime().toString('dd/MM/yyyy hh:mm')
         data_nascimento = self.data_nascimento.dateTime().toString('dd/MM/yyyy')
         especialidade = self.combo_medico.currentText()           
 
@@ -86,7 +86,7 @@ class CadCadastro(QWidget):
         self.limparCampos()               
 
     def finalizaCadastro(self):
-        data = self.data_consulta.dateTime().toString('dd/MM/yyyy')
+        data = self.data_consulta.dateTime().toString('dd/MM/yyyy hh:mm')
         data_nascimento = self.data_nascimento.dateTime().toString('dd/MM/yyyy')
         novoCadastro = (-1, data, data_nascimento)
         CadModel.addCadastro(novoCadastro)   

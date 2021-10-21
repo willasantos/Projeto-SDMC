@@ -13,207 +13,201 @@
   <property name="windowTitle">
    <string>Cadastro</string>
   </property>
-  <widget class="QWidget" name="">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>10</y>
-     <width>981</width>
-     <height>621</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout">
-    <item>
-     <layout class="QHBoxLayout" name="horizontalLayout"/>
-    </item>
-    <item>
-     <layout class="QGridLayout" name="gridLayout">
-      <item row="7" column="0">
-       <widget class="QLabel" name="label_11">
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout"/>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QPushButton" name="bt_salvar">
+       <property name="text">
+        <string>Salvar</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="bt_limpar">
+       <property name="text">
+        <string>Limpar Campos</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="bt_excluir">
+       <property name="text">
+        <string>Excluir</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="6" column="0">
+      <widget class="QLabel" name="label_11">
+       <property name="text">
+        <string>Tipo de Médico:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="0">
+      <widget class="QLabel" name="label_13">
+       <property name="text">
+        <string>Dia da Consulta:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="3">
+      <widget class="QComboBox" name="combo_medico">
+       <property name="editable">
+        <bool>false</bool>
+       </property>
+       <property name="modelColumn">
+        <number>0</number>
+       </property>
+       <item>
         <property name="text">
-         <string>Tipo de Médico:</string>
+         <string>Ortopedista</string>
         </property>
-       </widget>
-      </item>
-      <item row="8" column="0">
-       <widget class="QLabel" name="label_13">
+       </item>
+       <item>
         <property name="text">
-         <string>Dia da Consulta:</string>
+         <string>Pediatra</string>
         </property>
-       </widget>
-      </item>
-      <item row="7" column="3">
-       <widget class="QComboBox" name="combo_medico">
-        <property name="editable">
-         <bool>false</bool>
-        </property>
-        <property name="modelColumn">
-         <number>0</number>
-        </property>
-        <item>
-         <property name="text">
-          <string>Ortopedista</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Pediatra</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Geriatra</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Nutricionista</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Clinico Geral</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Oftamologista</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Dentista</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Cirurgiao</string>
-         </property>
-        </item>
-       </widget>
-      </item>
-      <item row="6" column="3">
-       <widget class="QLineEdit" name="endereco"/>
-      </item>
-      <item row="1" column="0">
-       <widget class="QLabel" name="label_6">
+       </item>
+       <item>
         <property name="text">
-         <string>Nome Completo:</string>
+         <string>Geriatra</string>
         </property>
-       </widget>
-      </item>
-      <item row="2" column="0">
-       <widget class="QLabel" name="label_12">
+       </item>
+       <item>
         <property name="text">
-         <string>Data de Nascimento:</string>
+         <string>Nutricionista</string>
         </property>
-       </widget>
-      </item>
-      <item row="1" column="3">
-       <widget class="QLineEdit" name="nome_com"/>
-      </item>
-      <item row="2" column="3">
-       <widget class="QDateEdit" name="data_nascimento">
-        <property name="calendarPopup">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="0">
-       <widget class="QLabel" name="label_7">
+       </item>
+       <item>
         <property name="text">
-         <string>CPF:</string>
+         <string>Clinico Geral</string>
         </property>
-       </widget>
-      </item>
-      <item row="3" column="3">
-       <widget class="QLineEdit" name="cpf"/>
-      </item>
-      <item row="4" column="0">
-       <widget class="QLabel" name="label_8">
+       </item>
+       <item>
         <property name="text">
-         <string>Cartão do SUS:</string>
+         <string>Oftamologista</string>
         </property>
-       </widget>
-      </item>
-      <item row="5" column="0">
-       <widget class="QLabel" name="label_9">
+       </item>
+       <item>
         <property name="text">
-         <string>Telefone:</string>
+         <string>Dentista</string>
         </property>
-       </widget>
-      </item>
-      <item row="4" column="3">
-       <widget class="QLineEdit" name="cartao_sus"/>
-      </item>
-      <item row="5" column="3">
-       <widget class="QLineEdit" name="telefone"/>
-      </item>
-      <item row="6" column="0">
-       <widget class="QLabel" name="label_10">
+       </item>
+       <item>
         <property name="text">
-         <string>Endereço:</string>
+         <string>Cirurgiao</string>
         </property>
-       </widget>
-      </item>
-      <item row="8" column="3">
-       <widget class="QDateEdit" name="data_consulta"/>
-      </item>
-      <item row="0" column="3">
-       <layout class="QHBoxLayout" name="horizontalLayout_2">
-        <item>
-         <widget class="QPushButton" name="bt_salvar">
-          <property name="text">
-           <string>Salvar</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <spacer name="horizontalSpacer">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>40</width>
-            <height>20</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-        <item>
-         <widget class="QPushButton" name="bt_limpar">
-          <property name="text">
-           <string>Limpar Campos</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <spacer name="horizontalSpacer_2">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>40</width>
-            <height>20</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-        <item>
-         <widget class="QPushButton" name="bt_excluir">
-          <property name="text">
-           <string>Excluir</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-     </layout>
-    </item>
-   </layout>
-  </widget>
+       </item>
+      </widget>
+     </item>
+     <item row="5" column="3">
+      <widget class="QLineEdit" name="endereco"/>
+     </item>
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_6">
+       <property name="text">
+        <string>Nome Completo:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_12">
+       <property name="text">
+        <string>Data de Nascimento:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="3">
+      <widget class="QLineEdit" name="nome_com"/>
+     </item>
+     <item row="1" column="3">
+      <widget class="QDateEdit" name="data_nascimento">
+       <property name="calendarPopup">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="label_7">
+       <property name="text">
+        <string>CPF:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="3">
+      <widget class="QLineEdit" name="cpf"/>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="label_8">
+       <property name="text">
+        <string>Cartão do SUS:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="label_9">
+       <property name="text">
+        <string>Telefone:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="3">
+      <widget class="QLineEdit" name="cartao_sus"/>
+     </item>
+     <item row="4" column="3">
+      <widget class="QLineEdit" name="telefone"/>
+     </item>
+     <item row="5" column="0">
+      <widget class="QLabel" name="label_10">
+       <property name="text">
+        <string>Endereço:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="3">
+      <widget class="QDateTimeEdit" name="data_consulta">
+       <property name="calendarPopup">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
  </widget>
  <resources/>
  <connections/>
