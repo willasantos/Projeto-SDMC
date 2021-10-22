@@ -2,6 +2,7 @@ from PyQt5.QtWidgets import QMainWindow, QLabel, QHBoxLayout, QWidget, QListWidg
 from PyQt5 import uic
 from layouts.ui_cadastros import CadCadastro
 from layouts.ui_historico import HistoricoConsulta
+from layouts.ui_exame import NovoExame
 
 class CustomQWidget(QWidget):
     def __init__(self, icon, text, parent=None):
@@ -34,6 +35,12 @@ class MainWindow(QMainWindow):
         self.listWidget.insertItem(1,item)
         self.listWidget.setItemWidget(item, item_widget) 
 
+        item = QListWidgetItem(self.listWidget)
+        item_widget = CustomQWidget("+", "EXAMES")
+        item.setSizeHint(item_widget.sizeHint())
+        self.listWidget.insertItem(2,item)
+        self.listWidget.setItemWidget(item, item_widget)         
+
         self.listWidget.setCurrentRow(0)
         self.mostrarJanelas()
         self.listWidget.currentRowChanged.connect(self.display)
@@ -46,6 +53,7 @@ class MainWindow(QMainWindow):
     def mostrarJanelas(self):
         self.stackedWidget_2.insertWidget(0, CadCadastro())
         self.stackedWidget_2.insertWidget(1, HistoricoConsulta(self))
+        self.stackedWidget_2.insertWidget(2, NovoExame())
 
     def display(self, index):
         self.mostrarJanelas()
