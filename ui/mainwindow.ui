@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1450</width>
-    <height>709</height>
+    <height>728</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,8 +19,8 @@
      <rect>
       <x>30</x>
       <y>-30</y>
-      <width>1371</width>
-      <height>661</height>
+      <width>1391</width>
+      <height>721</height>
      </rect>
     </property>
     <widget class="QWidget" name="page_home">
@@ -415,7 +415,7 @@
         <x>10</x>
         <y>30</y>
         <width>1301</width>
-        <height>581</height>
+        <height>611</height>
        </rect>
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout_3">

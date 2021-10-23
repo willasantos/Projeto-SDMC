@@ -1,14 +1,16 @@
 class Exame():
-    def __init__(self, Id, nome_paciente, exame):
-        self.Id = Id
+    def __init__(self, id_paciente, nome_paciente,data_hora, exame, cpf_paciente, telefone_paciente):
+        self.id_paciente = id_paciente
         self.nome_paciente = nome_paciente
+        self.data_hora = data_hora
         self.exame = exame
+        self.cpf_paciente = cpf_paciente
+        self.telefone_paciente = telefone_paciente
 
-    def gitId(self):
-        return self.Id
+    def print(self):
+        inf = [self.nome_paciente, self.data_hora, self.exame, self.cpf_paciente, self.telefone_paciente] 
+        print(inf)
 
-    def gitNome(self):
-        return self.nome_paciente
-
-    def gitExame(self):
-        return self.exame            
+    def getInf(self):
+        inf = [self.nome_paciente]
+        return inf     
