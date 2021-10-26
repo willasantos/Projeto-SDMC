@@ -1,5 +1,5 @@
 from PyQt5.QtWidgets import QWidget
-from PyQt5.QtCore import QRegExp, QDate
+from PyQt5.QtCore import  QDate
 from PyQt5 import uic
 
 from classes.exame import Exame
@@ -53,7 +53,7 @@ class NovoExame(QWidget):
     def limparCampos(self):
         self.exameAtual = None
         self.nome_paciente.setText("")
-        self.data_hora.setText(QDate.currentDate())
+        self.data_hora.setDate(QDate.currentDate())
         self.cpf_paciente.setText("")
         self.telefone_paciente.setText("")
     
@@ -75,7 +75,7 @@ class NovoExame(QWidget):
         self.table.deletar(self.exameAtual)
         self.limparCampos()    
 
-    def finalizaExame(self):
+    def finalizarExame(self):
         data_hora = self.data_hora.dateTime().toString('dd/MM/yyyy hh:mm')
         novoExame = (-1, data_hora)
         ExModel.addExame(novoExame)   

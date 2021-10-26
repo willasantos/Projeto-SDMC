@@ -7,7 +7,7 @@ class QuadroExame(QTableWidget):
         super().__init__(0, 6)
         self.janela_prince = janela_prince
 
-        headers = ["ID", "NOME", "CPF", "TELEFONE", "DATA E HORA",  "EXAME"]
+        headers = ["ID", "NOME","DATA E HORA", "EXAME", "CPF", "TELEFONE"]
         self.setHorizontalHeaderLabels(headers)
 
         self.configuracao()
@@ -30,7 +30,7 @@ class QuadroExame(QTableWidget):
         self.lista_exame = ExModel.gettExame()
         self.setRowCount(0)
         for exame in self.lista_exame:
-            self.addRow(exame) 
+            self.addRow(exame)
 
     def addRow(self, exame):
         rowCount = self.rowCount()
@@ -38,14 +38,14 @@ class QuadroExame(QTableWidget):
         id_paciente = QTableWidgetItem(str(exame.id_paciente))
         nome_paciente = QTableWidgetItem(exame.nome_paciente)
         data_hora = QTableWidgetItem(str(exame.data_hora))
-        exame = QTableWidgetItem(exame.exame)
+        exame_paciente = QTableWidgetItem(exame.exame)
         cpf_paciente = QTableWidgetItem(str(exame.cpf_paciente))
         telefone_paciente = QTableWidgetItem(str(exame.telefone_paciente))
         
         self.setItem(rowCount, 0, id_paciente)
         self.setItem(rowCount, 1, nome_paciente)
         self.setItem(rowCount, 2, data_hora)
-        self.setItem(rowCount, 3, exame)
+        self.setItem(rowCount, 3, exame_paciente)
         self.setItem(rowCount, 4, cpf_paciente)  
         self.setItem(rowCount, 5, telefone_paciente)
 
