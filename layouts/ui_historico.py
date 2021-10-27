@@ -1,7 +1,7 @@
 from PyQt5.QtWidgets import QWidget, QHeaderView, QTableWidget, QTableWidgetItem, QHBoxLayout, QPushButton
 from PyQt5.QtCore import Qt, QSize
-from PyQt5.QtGui import QIcon
 from PyQt5 import uic
+from PyQt5.QtGui import QIcon
 
 import models.cadastros_model as CadModel
 
@@ -15,7 +15,7 @@ class HistoricoConsulta(QWidget):
          self.cadastroAtual = None
          self.configTable()
          self.inserirDados(self)
-         
+             
     def inserirDados(self, item):
         lista_cadastro = CadModel.gettCadastro()
 
@@ -85,5 +85,3 @@ class MeuBotao(QWidget):
 
     def remover(self):
         pass
-
-    
