@@ -81,4 +81,3 @@ class NovoExame(QWidget):
         ExModel.addExame(novoExame)   
 
         self.limparCampos()            
-        

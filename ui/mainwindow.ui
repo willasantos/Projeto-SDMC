@@ -23,7 +23,7 @@
          <rect>
           <x>520</x>
           <y>80</y>
-          <width>502</width>
+          <width>651</width>
           <height>201</height>
          </rect>
         </property>
@@ -38,7 +38,7 @@
             </font>
            </property>
            <property name="text">
-            <string>SDMC- Sistema de Marcação de Consultas</string>
+            <string>SDMC- Sistema de Marcação de Consultas e Exames</string>
            </property>
           </widget>
          </item>

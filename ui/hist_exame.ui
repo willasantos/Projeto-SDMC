@@ -6,39 +6,25 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>865</width>
-    <height>654</height>
+    <width>717</width>
+    <height>486</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Historico das Consultas</string>
+   <string>Histórico dos Exames</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout_2">
-   <item>
-    <widget class="QLabel" name="label">
-     <property name="font">
-      <font>
-       <pointsize>12</pointsize>
-       <weight>75</weight>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="text">
-      <string>Histórico de Consultas</string>
-     </property>
-    </widget>
-   </item>
+  <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <widget class="QGroupBox" name="groupBox">
      <property name="title">
-      <string>Informações das Consultas</string>
+      <string>Sobre os exames marcados</string>
      </property>
-     <layout class="QVBoxLayout" name="verticalLayout">
+     <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
        <widget class="QTableWidget" name="tableWidget">
         <column>
          <property name="text">
-          <string>ID</string>
+          <string>Id</string>
          </property>
         </column>
         <column>
@@ -48,17 +34,12 @@
         </column>
         <column>
          <property name="text">
-          <string>CPF</string>
+          <string>Data e Horário</string>
          </property>
         </column>
         <column>
          <property name="text">
-          <string> Consulta</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Medico</string>
+          <string>Exames</string>
          </property>
         </column>
        </widget>
