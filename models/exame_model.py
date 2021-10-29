@@ -47,7 +47,7 @@ def addExame(exame):
 def editExame(exame):
     conn = db.connect_db()
     cursor = conn.cursor()
-    sql = """UPDATE exame SET nome_paciente=?, data_hora =?, exame =?, cpf_paciente = ?, telefone_paciente=?  WHERE id_paciente =?"""
+    sql = """UPDATE exame SET nome_paciente=?, data_hora =?, exame =?, cpf_paciente = ?, telefone_paciente=?  WHERE id_paciente=?"""
     cursor.execute(sql,[exame.nome_paciente, exame.data_hora, exame.exame, exame.cpf_paciente, exame.telefone_paciente, exame.id_paciente])  
     conn.commit()
     conn.close()

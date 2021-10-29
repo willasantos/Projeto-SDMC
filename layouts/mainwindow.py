@@ -43,7 +43,7 @@ class MainWindow(QMainWindow):
         self.listWidget.setItemWidget(item, item_widget)        
 
         item = QListWidgetItem(self.listWidget)
-        item_widget = CustomQWidget("+", "SOBRE EXAMES")
+        item_widget = CustomQWidget("#", "SOBRE EXAMES")
         item.setSizeHint(item_widget.sizeHint())
         self.listWidget.insertItem(3,item)
         self.listWidget.setItemWidget(item, item_widget)  

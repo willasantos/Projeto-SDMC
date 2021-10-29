@@ -35,7 +35,7 @@ class NovoExame(QWidget):
             if self.exameAtual == None:
                 self.table.adicionar(novo)
             else:
-                novo.id = self.exameAtual.id_paciente
+                novo.id_paciente = self.exameAtual.id_paciente
                 self.table.atualizar(novo)
             self.limparCampos()       
 
@@ -79,5 +79,4 @@ class NovoExame(QWidget):
         data_hora = self.data_hora.dateTime().toString('dd/MM/yyyy hh:mm')
         novoExame = (-1, data_hora)
         ExModel.addExame(novoExame)   
-
         self.limparCampos()            

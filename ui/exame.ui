@@ -58,6 +58,16 @@
           </item>
           <item>
            <property name="text">
+            <string>Preventivo</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Mamografia</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
             <string>Exame de Sangue</string>
            </property>
           </item>
@@ -79,6 +89,16 @@
           <item>
            <property name="text">
             <string>Exames de fezes</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Eletrocardiograma</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Ecocardiograma</string>
            </property>
           </item>
          </widget>
